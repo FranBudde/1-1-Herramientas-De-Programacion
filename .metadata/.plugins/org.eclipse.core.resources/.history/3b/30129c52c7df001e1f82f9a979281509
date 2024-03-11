@@ -1,0 +1,70 @@
+package edu.ort.t1.tp1;
+import java.util.Scanner;
+
+public class Activididad_1 {
+	private static Scanner input = new Scanner(System.in);
+	public static void main(String[] args) {
+		/*
+		String name;
+		//punto 1
+		do{
+			System.out.println("Ingresa tu nombre");
+			name = input.nextLine();
+			if(name.length() < 3){
+			System.out.println("Tiene que tener minimo 3 caracteres");
+			};
+		}while (name.length() < 3);
+		
+		
+		//Punto 2
+		int notas[] = new int [3];
+		float suma = 0;
+		System.out.println("Ingresa tus notas: ");
+		for(int i = 0; i < notas.length; i++){
+			
+			do{
+				try{
+					System.out.print("Nota " + (i+1) + ": ");
+					notas[i] = Integer.parseInt(input.nextLine());
+					if(notas[i] > 10 || notas[i] < 0){
+						System.out.println("La nota debe estar entre 0 y 10");
+						continue;
+					}
+					break;
+				}
+				catch(NumberFormatException error){
+					System.err.println("Debes ingresar un número ");
+				}
+			}while (true);
+			
+			suma += notas[i];
+		}
+		
+		System.out.println("Tu promedio es de: " + suma / notas.length);
+		
+		
+		//Punto 3
+		
+		System.out.print("Ingresa un numero: ");
+		int number = Integer.parseInt(input.nextLine());
+		System.out.println("El numero que ingresaste es: " + number);
+		System.out.println(number + " x " + 5 + " es: " + (number*5));
+		System.out.println(number + " / " + 2 + " es: " + (number/2));
+		
+		*/
+		//Punto 4
+		System.out.print("Ingresa tu valor monetario por hora: ");
+		int valorMonetario = Integer.parseInt(input.nextLine());
+		System.out.print("Ingresa tus horas trabajadas: ");
+		int horasTrabajadas = Integer.parseInt(input.nextLine());
+		int valorPorSemana = ( ( horasTrabajadas * 5 ) + (horasTrabajadas/2) ) * valorMonetario ;
+		System.out.print("valor del salario por semana: " + valorPorSemana );
+		
+		
+		//Punto 5
+		
+		float num1 = Float.parseFloat(input.nextLine());
+		float num2 = Float.parseFloat(input.nextLine());
+	}
+
+}

@@ -1,0 +1,6 @@
+package edu.ort.t1.tp1;
+
+public class PersonasAporte {
+	public static String nombre;
+	public static Float aporte;
+}
