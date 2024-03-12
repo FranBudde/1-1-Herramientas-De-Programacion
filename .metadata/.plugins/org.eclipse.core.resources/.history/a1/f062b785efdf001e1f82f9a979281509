@@ -1,0 +1,27 @@
+package edu.ort.t1.tp1;
+
+public class MontañarusaPersonas {
+    private String nombre;
+    private Float aporte;
+    
+    public MontañarusaPersonas(String nombre, Float aporte) {
+        this.nombre = nombre;
+        this.altura = altura;
+    }
+    
+    public String getNombre() {
+        return nombre;
+    }
+    
+    public Float getAltura() {
+    	return aporte;
+    }
+        
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    public void setAltura(Float aporte) {
+        this.aporte = aporte;
+    }
+}
