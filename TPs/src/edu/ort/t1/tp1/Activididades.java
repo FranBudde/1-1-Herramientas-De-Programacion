@@ -1,5 +1,6 @@
 package edu.ort.t1.tp1;
 
+import java.util.Iterator;
 import java.util.Scanner;
 import java.text.DecimalFormat;
 import edu.ort.t1.tp1.PersonasAporte;
@@ -47,7 +48,43 @@ public class Activididades {
 		
 //		actividad_19 ();
 		
-		actividad_20 ();
+//		actividad_20 ();
+		
+//		actividad_21 ();
+		
+//		actividad_22 ();
+		
+//		actividad_23 ();
+		
+//		actividad_24 ();
+		
+//		actividad_25 ();
+		
+//		actividad_26 ();
+		
+//		actividad_27 ();
+		
+//		actividad_28 ();
+		
+//		actividad_29 ();
+		
+//		actividad_30 ();
+		
+//		actividad_31 ();
+		
+//		actividad_32 ();
+		
+//		actividad_33 ();
+		
+//		actividad_34 ();
+		
+//		actividad_35 ();
+		
+//		actividad_36 ();
+		
+//		actividad_37 ();
+		
+		actividad_38 ();
 
 }
 	
@@ -160,10 +197,16 @@ public class Activididades {
 	}
 	
 	public static void actividad_8 () {
-		System.out.print("Ingresa el primer numero por favor: ");
+		System.out.print("Ingresa el primer numero natural: ");
 		float num1 = Float.parseFloat(input.nextLine());
-		System.out.print("Ingresa el segundo numero por favor: ");
+		System.out.print("Ingresa el segundo numero natural: ");
 		float num2 = Float.parseFloat(input.nextLine());
+		
+		if(num1 < 0  || num2 < 0) {
+			System.out.print("Solo podes ingresar numeros enteros");
+			return;
+		}
+		
 		System.out.print("Ingresa uno de los siguientes operadores: +, -, / o * ");
 		char operador = input.next().charAt(0);
 		
@@ -409,7 +452,427 @@ MontañarusaPersonas ingresantes[] = new MontañarusaPersonas[4];
 		if(estaEnAmbosGrupos){
 			System.out.println("Esta en ambos grupos es de un solo digito y es impar " + number_1);
 			return;
-		}		
-		System.out.println("No esta en ningun grupo " + number_1);
+		}
+		if(noEstaEnNingunGrupo) {
+			System.out.println("No esta en ningun grupo " + number_1);
+			return;
+		}
+
+	}
+
+	public static void actividad_20 () {
+		char operador;
+		int num1;
+		int num2;
+		
+		do {
+			System.out.print("Ingresa el primer numero entero: ");
+			num1 = Integer.parseInt(input.nextLine());
+			System.out.print("Ingresa el segundo numero entero: ");
+			num2 = Integer.parseInt(input.nextLine());
+					
+			System.out.print("Ingresa uno de los siguientes operadores: +, -, / o * ");
+			operador = (input.nextLine()).charAt(0);
+			
+			if(num2 == 0 && operador == '/') {
+				System.out.println("Error ingresaste un 0 y no se puede dividir por 0 ");
+			}
+			
+		} while (num2 == 0 && operador == '/');
+		
+		switch (operador) {
+		case '+':
+			System.out.print("La suma de " + num1 + " y " + num2 + " es: " + (num1 + num2));
+			break;
+		case '-':
+			System.out.print("La resta de " + num1 + " y " + num2 + " es: " +  (num1 - num2));
+			break;
+		case '/':
+			System.out.print("La division de " + num1 + " y " + num2 + " es: " +  (num1 / num2));
+			break;
+		case '*':
+			System.out.print("La multiplicacion de " + num1 + " y " + num2 + " es: " +  (num1 * num2));
+			break;
+		default:
+		System.out.print("El operador que ingreso es incorrecto");
+			break;
+		}	
+	}
+
+	public static void actividad_21 () {
+		int number;
+		
+		do {
+			System.out.print("Ingresa un numero entre 1 y 7: ");
+			 number = Integer.parseInt(input.nextLine());
+			if( number < 1 || number > 7 ) {
+				System.out.println("ERROR ingresaste un numero fuera del rango que te pedimos");
+			}
+		} while (number < 1 || number > 7);
+		
+		switch (number) {
+		case 1:
+			System.out.println("Es domingo");
+			break;
+		case 2:
+			System.out.println("Es lunes");
+			break;
+		case 3:
+			System.out.println("Es martes");
+			break;
+		case 4:
+			System.out.println("Es miercoles");
+			break;
+		case 5:
+			System.out.println("Es jueves");
+			break;
+		case 6:
+			System.out.println("Es viernes");
+			break;
+
+		default:
+			System.out.println("Es sabado");
+			break;
+		}
+	}
+
+	public static void actividad_22 () {
+		int numbers[] = {1,2,3,4,5}; 
+		
+		for (int i = 0; i < numbers.length; i++) {
+			System.out.println("Orden de los numeros: " + numbers[i]);
+		}
+		
+		System.out.println("");
+		
+		for (int i = numbers.length - 1; i >= 0; i--) {
+			System.out.println("Orden de los numeros de forma inversa es: " + numbers[i]);
+		}
+	}
+
+	public static void actividad_23 () {
+		System.out.print("Ingresa un numero: ");
+		int number = Integer.parseInt(input.nextLine());
+		
+		for (int i = 1; i <= 10; i++) {
+			System.out.println("El numero que ingresaste " + number + " multiplicado por " + i + " es: " + ( number * i ));
+		}
+	}
+
+	public static void actividad_24 () {
+		int num1;
+		int num2;
+		do {
+			System.out.print("Ingresa el primer numero: ");
+			num1 = Integer.parseInt(input.nextLine());
+			System.out.print("Ingresa el segundo numero: ");
+			num2 = Integer.parseInt(input.nextLine());
+			
+			if(num1 > num2) {
+				System.out.println("El primer numero debe ser menor o igual al segundo numero ingresado");
+			};
+		} while (num1 > num2);
+		
+		System.out.println("los numeros que existen entre " + num1 + " y " + num2 + " excluyendolos son:");		
+		
+		for (int i = num1 + 1; i < num2; i++) {
+			System.out.println(i);
+		}
+		
+		System.out.println("los numeros que existen entre " + num1 + " y " + num2 + " incluyendolos son:");	
+		
+		for (int i = num1; i <= num2; i++) {
+			System.out.println(i);
+		}
+		
+	}
+	
+	public static void actividad_25 () {
+		System.out.print("Ingresa el ancho: ");
+		int ancho = Integer.parseInt(input.nextLine());
+		System.out.print("Ingresa el largo: ");
+		int largo = Integer.parseInt(input.nextLine());
+		int matriz[][] = new int [ancho] [largo];
+		
+        // Pedir al usuario que ingrese los valores para cada celda de la matriz
+        for (int x = 0; x < matriz.length; x++) {
+            for (int y = 0; y < matriz[x].length; y++) {
+                System.out.print("Ingresa el valor para la posición [" + x + "][" + y + "]: ");
+                matriz[x][y] = Integer.parseInt(input.nextLine());
+            }
+        }
+        
+        // Imprimir la matriz después de asignar valores
+        System.out.println("Matriz ingresada:");
+        for (int x = 0; x < matriz.length; x++) {
+        	 System.out.println("|");
+            for (int y = 0; y < matriz[x].length; y++) {
+                System.out.print(matriz[x][y] + " ");
+                if (y!=matriz[x].length-1) System.out.print("\t"); //mientras " y " sea distinto al ultimo indice que tiene la matriz en la fila
+            }
+            System.out.println("|"); // Nueva línea después de imprimir cada fila
+        }
+		
+	}
+
+	public static void actividad_26 () {
+		System.out.print("Ingresa un numero natural: ");
+		float number = Float.parseFloat(input.nextLine());		
+		int j = 1;
+		
+		for (int i = 1; i <= number; i++) {
+			if(( j * 3 ) % 5 != 0 ) {
+				System.out.println(j + " * " + 3 + " = " + ( j * 3 ));
+			}else {
+				i--;
+			}
+			j++;
+		}
+		
+	}
+
+	public static void actividad_27 () {
+		int edades[] = new int[5];
+		int acum = 0;
+		int impares = 0;
+		
+		for (int i = 0; i < edades.length; i++) {
+			System.out.print("Ingresa edad numero " + ( i + 1) + " : ");
+			edades[i] = Integer.parseInt(input.nextLine());
+			
+			if(edades[i] % 2 != 0 && edades[i] > 18) impares++;
+			acum += edades[i];
+		}
+		System.out.println("El promedio de todas las edades ingresadas fueron de: " +(float)( acum / edades.length ));
+		System.out.println("La cantidad de edades impares mayores que 18 son: " + impares);
+	}
+	
+	public static void actividad_28 () {
+		System.out.print("Ingresa un numero: ");
+		int cant = Integer.parseInt(input.nextLine());
+		double mayor = Double.NEGATIVE_INFINITY;
+		int indice = -1;
+		
+		for (int i = 1; i <= cant; i++) {
+			System.out.print("Ingresa un numero: ");
+			int number = Integer.parseInt(input.nextLine());
+			if( number > mayor) {
+				mayor = number;
+				indice = i;
+			}
+		}
+		System.out.println("El numero mayor fue: " + mayor + " en el indice: " + indice);
+	}
+	
+	public static void actividad_29 () {
+		float number;	
+		
+		do {
+			System.out.print("Ingresa un numero entre 0 y 10: ");
+			number = Float.parseFloat(input.nextLine());
+		} while (number < 0 || number > 10);
+		System.out.print("El numero que ingresaste es: " + number);
+	}
+
+	public static void actividad_30 () {
+		char operador;
+		int num1;
+		int num2;
+		
+		do {
+			System.out.print("Ingresa uno de los siguientes operadores: ( +, -, / , * o F(para finalizar) ) ");
+			operador = (input.nextLine()).charAt(0);
+			
+			if( Character.toUpperCase(operador)  == 'F') {
+				System.out.println("Se a finalizado la operacion... Vuelva pronto!!");
+				return;
+			}
+			
+			System.out.print("Ingresa el primer numero entero: ");
+			num1 = Integer.parseInt(input.nextLine());
+			System.out.print("Ingresa el segundo numero entero: ");
+			num2 = Integer.parseInt(input.nextLine());
+					
+
+			
+			if(num2 == 0 && operador == '/') {
+				System.out.println("Error ingresaste un 0 y no se puede dividir por 0 ");
+			}
+			
+		} while (num2 == 0 && operador == '/');
+		
+		switch (operador) {
+		case '+':
+			System.out.print("La suma de " + num1 + " y " + num2 + " es: " + (num1 + num2));
+			break;
+		case '-':
+			System.out.print("La resta de " + num1 + " y " + num2 + " es: " +  (num1 - num2));
+			break;
+		case '/':
+			System.out.print("La division de " + num1 + " y " + num2 + " es: " +  (num1 / num2));
+			break;
+		case '*':
+			System.out.print("La multiplicacion de " + num1 + " y " + num2 + " es: " +  (num1 * num2));
+			break;
+		default:
+		System.out.print("El operador que ingreso es incorrecto");
+			break;
+		}	
+	}
+
+	public static void actividad_31 () {
+		char opcion = 's';
+		
+//		do {
+//			System.out.print("¿Deseás continuar? [S/N]: ");
+//			opcion = (input.nextLine()).charAt(0);
+//			
+//		} while (Character.toUpperCase(opcion) == 'S');
+		
+		
+		while (Character.toUpperCase(opcion) == 'S') {
+			System.out.print("¿Deseás continuar? [S/N]: ");
+			opcion = (input.nextLine()).charAt(0);
+		}
+	}
+
+	public static void actividad_32 () {
+		float number;	
+		
+		do {
+			System.out.print("Ingresa un numero 2 o entre  4 y 10: ");
+			number = Float.parseFloat(input.nextLine());
+		} while (number != 2 && number < 4 || number > 10);
+		System.out.print("El numero que ingresaste es: " + number);
+	}
+
+	public static void actividad_33 () {
+		float number;
+		float max = Float.NEGATIVE_INFINITY;
+		float min = Float.POSITIVE_INFINITY;
+		
+		do {
+			System.out.print("Ingresa un numero: ");
+			number = Float.parseFloat(input.nextLine());
+			
+			if(number > max) {
+			 max = number;
+			}
+			
+			if(number < min) {
+				min = number;
+			}
+			System.out.println("El numero mayor actualmente es: " + max);
+			System.out.println("El numero menor actualmente es: " + min);
+			System.out.println("");
+		} while (number != 0);
+	}
+
+	public static void actividad_34 () {
+		float altura;
+		float acum = 0;
+		int contador = 0;
+		
+		do {
+			System.out.print("Ingresa tu estatura: ");
+			altura = Float.parseFloat(input.nextLine());
+			acum += altura;
+			if ( altura != 0 ) contador++;
+		} while (altura != 0);
+		System.out.print("La estatura promedio es de: " + ( acum / contador ));
+	}
+
+	public static void actividad_35 () {
+		String name;
+		int edad;
+		int edadjoven = Integer.MAX_VALUE;
+		String nameJoven = "";
+		
+		do {
+			System.out.print("Ingresa tu nombre: ");
+			name = input.nextLine();
+			
+			if(name.charAt(0) != '*' ) {
+				System.out.print("Ingresa tu edad: ");
+				edad = Integer.parseInt(input.nextLine());
+				
+				if( edad < edadjoven) {
+					edadjoven = edad;
+					nameJoven = name;
+				}
+			}
+
+			
+		} while ( name.charAt(0) != '*' );
+		System.out.print("La persona mas joves es: " + nameJoven + " y tiene " + edadjoven + " años");
+	}
+
+	public static void actividad_36 () {
+		int numero;
+		int division = 0;
+		int acumulador = 0;
+		
+		do {
+			System.out.print("Ingresa un numero: ");
+			numero = Integer.parseInt(input.nextLine());
+			division++;
+			acumulador += numero;
+			
+			System.out.println("El promedio actualmente es de:  " + ( acumulador / division ) );
+			System.out.println("");
+		} while ( ( acumulador / division ) < 20);
+		
+		System.out.println("La cantidad de valores leidos son: " + division );
+	}
+
+	public static void actividad_37 () {
+		int meses = 0;
+		float sueldo;
+		float acumulador = 0;
+		
+		do {
+			System.out.print("Ingresa tu sueldo: ");
+			sueldo = Float.parseFloat(input.nextLine());
+			if(sueldo < 0) break;
+			acumulador += sueldo;
+			meses++;
+		} while ( sueldo > 0  || meses != 12);
+		
+		System.out.print("El monto de tu sueldo actualmente es de: " + acumulador + " cobraste " +  meses + " meses");
+	}
+
+	public static void actividad_38 () {
+		String admin = "admin";
+		String contraseña = "123456";
+		int intentos = 3;
+		Boolean logueado = false;
+		
+		do {
+			
+			if(intentos <= 0) {
+				System.out.println("Se ha bloqueado la cuenta");
+				return;
+			}
+			
+			System.out.print("Ingresa tu usuario: ");
+			String user = input.nextLine();
+			System.out.print("Ingresa tu contraseña: ");
+			String password = input.nextLine();
+			
+			if(user.equals(admin) && password.equals(contraseña)) {
+				System.out.println("Acceso concedido");
+				logueado = true;
+				return;
+			}
+
+			intentos--;
+			System.out.println("Completar correctamente los campos");
+			System.out.println("");
+		} while ( intentos > 0 || !logueado);
+		
+	}
+
+	public static void actividad_39 () {
+		// falta
 	}
 }
